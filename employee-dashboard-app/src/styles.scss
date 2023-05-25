@@ -1,39 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import "./assets/styles/variables.scss";
 
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
-// Plus imports for other components in your app.
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat.core();
+body {
+  font-size: 12px;
+  background-color: $main-app-color;
+  color: $main-letters-color;
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$employee-dashboard-app-primary: mat.define-palette(mat.$indigo-palette);
-$employee-dashboard-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+  h1 {
+    font-size: 24px;
+  }
 
-// The warn palette is optional (defaults to red).
-$employee-dashboard-app-warn: mat.define-palette(mat.$red-palette);
+  h2,
+  h3 {
+    font-size: 22px;
+  }
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$employee-dashboard-app-theme: mat.define-light-theme((
-  color: (
-    primary: $employee-dashboard-app-primary,
-    accent: $employee-dashboard-app-accent,
-    warn: $employee-dashboard-app-warn,
-  )
-));
+  h4,
+  h5 {
+    font-size: 15px;
+  }
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($employee-dashboard-app-theme);
+  h6 {
+    font-size: 13px;
+  }
 
-/* You can add global styles to this file, and also import other style files */
+  ul {
+    list-style: none;
+  }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    border: none;
+    background-color: none;
+  }
+
+  input,
+  select {
+    outline: none;
+    border: none;
+  }
+
+  .container {
+    margin: 0 5%;
+  }
+
+  .disabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+    cursor: -moz-not-allowed;
+    cursor: -webkit-not-allowed;
+  }
+
+  .my-form-field {
+    margin: 1rem 0;
+  }
+
+  .alert {
+    color: crimson;
+    font-size: 11px;
+    font-weight: bold;
+    background-color: azure;
+    border-radius: 6px;
+    padding-left: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  .container {
+    margin: 0 15% !important;
+  }
+}

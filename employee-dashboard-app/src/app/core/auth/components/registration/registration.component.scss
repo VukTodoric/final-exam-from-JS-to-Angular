@@ -1,0 +1,79 @@
+@import "../../../../../assets/styles/variables.scss";
+
+.registration-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  form {
+    position: absolute;
+    top: 30%;
+    letter-spacing: 2px;
+    width: 18rem;
+
+    h2,
+    p {
+      margin: 0.3rem 0;
+    }
+
+    input,
+    button {
+      display: block;
+      height: 2rem;
+      width: 100%;
+      margin: 0.3rem 0;
+      border-radius: 0.25rem;
+      border: none;
+
+      &:hover,
+      &:focus {
+        transition: ease-in-out 0.4s;
+        border: 1px solid darkgrey;
+        box-shadow: 0px 0px 0 ghostwhite, 0px 0px 10px ghostwhite;
+      }
+    }
+
+    input {
+      background-color: $main-input-color;
+      color: $secondary-letters-color;
+      padding-left: 0.5rem;
+    }
+
+    a {
+      color: $main-letters-color;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: $main-app-color;
+      color: $main-letters-color;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+
+      &:hover,
+      &:focus {
+        letter-spacing: 5px;
+        background: linear-gradient(180deg, $main-app-color, transparent);
+      }
+
+      &:disabled {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.bubble::after {
+  content: "";
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  background-color: $secondary-app-color;
+  height: 85%;
+}

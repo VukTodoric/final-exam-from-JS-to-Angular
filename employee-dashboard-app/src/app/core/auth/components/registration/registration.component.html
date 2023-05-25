@@ -1,0 +1,66 @@
+<div class="registration-wrapper bubble">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <h2>Registration</h2>
+    <div appShowError class="my-form-field">
+      <input
+        type="text"
+        required
+        pattern="[A-Z].{0,}"
+        placeholder="First Name"
+        formControlName="firstName"
+      />
+    </div>
+    <div appShowError class="my-form-field">
+      <input
+        type="text"
+        required
+        pattern="[A-Z].{0,}"
+        placeholder="Last name"
+        formControlName="lastName"
+      />
+    </div>
+    <div appShowError class="my-form-field">
+      <input
+        type="email"
+        required
+        placeholder="Email"
+        formControlName="email"
+      />
+    </div>
+    <div appShowError>
+      <input
+        type="password"
+        required
+        pattern="[\W\w]+"
+        placeholder="Password"
+        formControlName="password"
+      />
+    </div>
+    <div appShowError class="my-form-field">
+      <input
+        type="password"
+        required
+        pattern="[\W\w]+"
+        placeholder="Confirm password"
+        formControlName="confirmPassword"
+      />
+    </div>
+
+    <button
+      type="submit"
+      [ngClass]="
+        this.form.invalid ||
+        this.form.value.password !== this.form.value.confirmPassword
+          ? 'disabled'
+          : ''
+      "
+      [disabled]="
+        this.form.invalid ||
+        this.form.value.password !== this.form.value.confirmPassword
+      "
+    >
+      Register
+    </button>
+    <p>Or <a routerLink="/login">Login</a> if you already have account.</p>
+  </form>
+</div>
