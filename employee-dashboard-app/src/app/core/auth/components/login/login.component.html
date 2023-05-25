@@ -3,7 +3,9 @@
     <h2>Login</h2>
     <div appShowError class="my-form-field">
       <input
+        id="email"
         type="email"
+        autocomplete="email"
         required
         placeholder="Email"
         formControlName="email"
@@ -11,6 +13,7 @@
     </div>
     <div appShowError class="my-form-field">
       <input
+        id="password"
         type="password"
         required
         pattern="[\W\w]+"

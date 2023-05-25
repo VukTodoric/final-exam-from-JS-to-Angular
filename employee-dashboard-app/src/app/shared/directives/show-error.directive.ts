@@ -17,9 +17,25 @@ export class ShowErrorDirective implements AfterViewInit {
       const validationMessage = (event.target as HTMLInputElement)
         .validationMessage;
       this.renderer.addClass(this.divEl, 'alert');
+      this.renderer.addClass(
+        this.elementRef.nativeElement.firstChild,
+        'red-border'
+      );
+      this.renderer.removeClass(
+        this.elementRef.nativeElement.firstChild,
+        'green-border'
+      );
       this.renderer.setProperty(this.divEl, 'innerText', validationMessage);
     } else {
+      this.renderer.addClass(
+        this.elementRef.nativeElement.firstChild,
+        'green-border'
+      );
       this.renderer.removeClass(this.divEl, 'alert');
+      this.renderer.removeClass(
+        this.elementRef.nativeElement.firstChild,
+        'red-border'
+      );
       this.renderer.setProperty(this.divEl, 'innerText', '');
     }
   }

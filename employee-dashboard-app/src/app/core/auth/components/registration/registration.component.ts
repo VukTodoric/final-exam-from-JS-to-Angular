@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -7,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent implements OnInit {
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   form: FormGroup = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
@@ -20,6 +21,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
+    this.authService.registration(this.form.value).subscribe();
     console.log(this.form.value);
   }
 }

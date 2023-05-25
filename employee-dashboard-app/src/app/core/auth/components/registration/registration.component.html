@@ -3,6 +3,7 @@
     <h2>Registration</h2>
     <div appShowError class="my-form-field">
       <input
+        id="firstName"
         type="text"
         required
         pattern="[A-Z].{0,}"
@@ -12,6 +13,7 @@
     </div>
     <div appShowError class="my-form-field">
       <input
+        id="lastName"
         type="text"
         required
         pattern="[A-Z].{0,}"
@@ -21,7 +23,9 @@
     </div>
     <div appShowError class="my-form-field">
       <input
+        id="email"
         type="email"
+        autocomplete="email"
         required
         placeholder="Email"
         formControlName="email"
@@ -29,6 +33,7 @@
     </div>
     <div appShowError>
       <input
+        id="password"
         type="password"
         required
         pattern="[\W\w]+"
@@ -38,6 +43,7 @@
     </div>
     <div appShowError class="my-form-field">
       <input
+        id="confirmPassword"
         type="password"
         required
         pattern="[\W\w]+"
