@@ -1,0 +1,52 @@
+@import "../../../../assets/styles/variables.scss";
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 0 2.5%;
+
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+
+    .menu-btn ::ng-deep button {
+      background-color: transparent;
+
+      span {
+        color: $main-letters-color;
+      }
+    }
+
+    .logo {
+      letter-spacing: 4px;
+      margin-left: 1rem;
+    }
+  }
+
+  .loginBtn-wrapper {
+    cursor: pointer;
+  }
+}
+
+::ng-deep .mat-menu-panel {
+  min-height: fit-content !important;
+
+  .mat-menu-content {
+    // background-color: $gb-primary;
+
+    button {
+      // color: $gb-secondary;
+      display: flex;
+      align-items: center;
+      height: 1.5rem;
+      width: fit-content;
+
+      span {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

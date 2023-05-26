@@ -3,8 +3,11 @@ import {
   Directive,
   ElementRef,
   HostListener,
+  Optional,
   Renderer2,
+  Self,
 } from '@angular/core';
+import { NgControl } from '@angular/forms';
 
 @Directive({
   selector: '[appShowError]',

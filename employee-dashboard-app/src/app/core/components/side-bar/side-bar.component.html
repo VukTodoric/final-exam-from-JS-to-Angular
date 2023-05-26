@@ -1,1 +1,17 @@
-<p>side-bar works!</p>
+<mat-drawer-container autosize class="drawer-container">
+  <mat-drawer #drawer mode="side" class="side-drawer">
+    <div class="side-nav-wrapper">
+      <mat-list role="list" class="menu-list">
+        <mat-list-item role="listitem">
+          <a
+            routerLink="/homepage"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ><span class="material-symbols-rounded"> home </span>Homepage</a
+          >
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-drawer>
+  <ng-content></ng-content>
+</mat-drawer-container>

@@ -1,1 +1,16 @@
-<p>nav works!</p>
+<nav>
+  <div class="logo-wrapper">
+    <app-button class="menu-btn" (onClick)="onToggleSidebar()">
+      <span class="material-symbols-rounded"> menu </span>
+    </app-button>
+    <h1 class="logo">Dashboard</h1>
+  </div>
+  <div class="loginBtn-wrapper">
+    <span [matMenuTriggerFor]="menu">test</span>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onLogout()">
+        <span class="material-symbols-rounded"> logout </span> Logout
+      </button>
+    </mat-menu>
+  </div>
+</nav>

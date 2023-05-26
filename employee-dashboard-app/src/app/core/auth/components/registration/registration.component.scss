@@ -69,12 +69,12 @@
 
 .bubble::after {
   content: "";
-  border-top-left-radius: 50% 100%;
-  border-top-right-radius: 50% 100%;
+  border-top-left-radius: 100% 100%;
+  border-top-right-radius: 100% 100%;
   position: absolute;
   bottom: 0;
   z-index: -1;
   width: 100%;
-  background-color: $secondary-app-color;
+  background: linear-gradient(180deg, black, transparent);
   height: 85%;
 }
