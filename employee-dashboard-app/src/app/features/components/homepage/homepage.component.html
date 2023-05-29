@@ -1,1 +1,50 @@
-<p>homepage works!</p>
+<div class="homepage-wrapper">
+  <h2>{{ heading }}</h2>
+  <div class="search-wrapper">
+    <app-search (searchResult)="onSearch($event)"></app-search>
+  </div>
+  <div class="mat-elevation-z9 table-wrapper">
+    <table mat-table [dataSource]="employeeArray">
+      <ng-container matColumnDef="employee">
+        <th mat-header-cell *matHeaderCellDef>Employee</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.first_name }} {{ element.last_name }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.email }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>Year</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.position }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.description | shorten : 50 }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="employment_date">
+        <th mat-header-cell *matHeaderCellDef>Employment date</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.employment_date }}
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns"></tr>
+    </table>
+
+    <mat-paginator
+      class="table-paginator"
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements"
+    >
+    </mat-paginator>
+  </div>
+</div>

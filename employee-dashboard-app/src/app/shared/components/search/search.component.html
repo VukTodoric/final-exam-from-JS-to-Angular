@@ -1,0 +1,14 @@
+<mat-form-field appearance="legacy" class="search-wrapper">
+  <mat-label>{{ placeholder }}</mat-label>
+  <input
+    matInput
+    type="text"
+    placeholder="{{ placeholder }}"
+    #searchValue
+    [value]="defaultValue"
+    (change)="onChange(searchValue)"
+  />
+  <app-button class="searchBtn" (onClick)="onSearchAction(searchValue)">
+    <span class="material-symbols-rounded"> search </span>
+  </app-button>
+</mat-form-field>

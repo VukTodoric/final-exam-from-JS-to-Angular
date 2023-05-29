@@ -7,7 +7,7 @@
         type="text"
         required
         pattern="[A-Z].{0,}"
-        placeholder="First Name"
+        placeholder="First Name*"
         formControlName="firstName"
       />
     </div>
@@ -17,7 +17,7 @@
         type="text"
         required
         pattern="[A-Z].{0,}"
-        placeholder="Last name"
+        placeholder="Last name*"
         formControlName="lastName"
       />
     </div>
@@ -27,7 +27,7 @@
         type="email"
         autocomplete="email"
         required
-        placeholder="Email"
+        placeholder="Email*"
         formControlName="email"
       />
     </div>
@@ -37,7 +37,7 @@
         type="password"
         required
         pattern="[\W\w]+"
-        placeholder="Password"
+        placeholder="Password*"
         formControlName="password"
       />
     </div>
@@ -47,8 +47,16 @@
         type="password"
         required
         pattern="[\W\w]+"
-        placeholder="Confirm password"
+        placeholder="Confirm password*"
         formControlName="confirmPassword"
+      />
+    </div>
+    <div class="my-form-field">
+      <input
+        type="file"
+        id="uploadedImg"
+        accept="image/*"
+        formControlName="uploadedImg"
       />
     </div>
 

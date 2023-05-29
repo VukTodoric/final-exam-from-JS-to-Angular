@@ -4,6 +4,7 @@ import { LoginComponent } from './core/auth/components/login/login.component';
 import { RegistrationComponent } from './core/auth/components/registration/registration.component';
 import { MainLayoutComponent } from './core/components/main-layout/main-layout.component';
 import { HomepageComponent } from './features/components/homepage/homepage.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -11,7 +12,11 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: '', redirectTo: 'homepage', pathMatch: 'full' },
-      { path: 'homepage', component: HomepageComponent },
+      {
+        path: 'homepage',
+        component: HomepageComponent,
+        canActivate: [AuthGuard],
+      },
     ],
   },
   { path: 'login', component: LoginComponent },

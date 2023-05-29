@@ -115,11 +115,30 @@ body {
   }
 
   .red-border {
-    border: 1px solid crimson !important;
+    border: 2px solid crimson !important;
   }
 
   .green-border {
-    border: 1px solid chartreuse !important;
+    border: 2px solid chartreuse !important;
+  }
+
+  .back-drop {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    height: 100%;
+  }
+
+  .user-avatar {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background-color: darkcyan;
+    color: $main-letters-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 }
 

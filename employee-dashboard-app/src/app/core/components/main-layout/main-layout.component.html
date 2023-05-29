@@ -1,11 +1,16 @@
-<header>
-  <app-nav></app-nav>
-</header>
-<app-side-bar>
-  <main>
-    <div class="container">
-      <router-outlet></router-outlet>
-    </div>
-  </main>
-</app-side-bar>
-<footer></footer>
+<div [ngClass]="isLoading ? 'back-drop' : ''">
+  <header>
+    <app-nav></app-nav>
+  </header>
+  <app-side-bar>
+    <main>
+      <div class="container">
+        <router-outlet></router-outlet>
+        <mat-spinner *ngIf="isLoading" class="my-spinner"></mat-spinner>
+      </div>
+    </main>
+  </app-side-bar>
+  <footer>
+    <p>Orion innovation - ANGULAR WORKSHOP {{ currentYear }}</p>
+  </footer>
+</div>

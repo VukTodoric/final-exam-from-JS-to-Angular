@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { take } from 'rxjs';
+import { Router } from '@angular/router';
+import { RegistrationCredentials } from '../../models/credentials.interface';
 
 @Component({
   selector: 'app-registration',
@@ -8,7 +11,9 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent implements OnInit {
-  constructor(private authService: AuthService) {}
+  user!: RegistrationCredentials;
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   form: FormGroup = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
@@ -16,12 +21,32 @@ export class RegistrationComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
     confirmPassword: new FormControl('', [Validators.required]),
+    uploadedImg: new FormControl(''),
   });
 
   ngOnInit(): void {}
 
+  get formPopulated() {
+    return (this.user = {
+      firstName: this.form.value.firstName,
+      lastName: this.form.value.lastName,
+      email: this.form.value.email,
+      password: this.form.value.password,
+      uploadedImg: this.form.value.uploadedImg,
+      createdAt: new Date().toISOString(),
+    });
+  }
+
   onSubmit() {
-    this.authService.registration(this.form.value).subscribe();
-    console.log(this.form.value);
+    if (
+      this.form.invalid ||
+      this.form.value.password !== this.form.value.confirmPassword
+    ) {
+      return;
+    }
+
+    this.authService.registration(this.formPopulated).pipe(take(1)).subscribe();
+    this.form.reset();
+    this.router.navigateByUrl('/login');
   }
 }

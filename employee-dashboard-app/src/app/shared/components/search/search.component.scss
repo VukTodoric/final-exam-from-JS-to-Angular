@@ -1,0 +1,37 @@
+@import "../../../../assets/styles/variables.scss";
+
+:host {
+  width: 50%;
+  position: relative;
+
+  .search-wrapper::ng-deep {
+    width: 30%;
+
+    .mat-form-field-label {
+      padding: 0.12rem 0.5rem;
+      color: $main-letters-color;
+      font-size: 1rem;
+      text-shadow: 1px 1px $main-letters-color;
+    }
+
+    input {
+      height: 2rem;
+      margin: 0;
+      border-radius: 0.25rem;
+      background-color: azure;
+      padding-left: 0.5rem;
+      padding-right: 1rem;
+      color: $secondary-letters-color;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .searchBtn button {
+      position: absolute;
+      right: 0;
+      bottom: 0.35rem;
+      background-color: azure;
+      border-radius: 0.25rem;
+    }
+  }
+}

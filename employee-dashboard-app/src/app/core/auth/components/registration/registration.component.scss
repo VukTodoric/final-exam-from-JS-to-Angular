@@ -39,6 +39,14 @@
       padding-left: 0.5rem;
     }
 
+    input[type="file"]::file-selector-button {
+      background-color: darkcyan !important;
+      color: $main-letters-color;
+      border-radius: 0.25rem;
+      border: none;
+      height: 100%;
+    }
+
     a {
       color: $main-letters-color;
       text-decoration: underline;

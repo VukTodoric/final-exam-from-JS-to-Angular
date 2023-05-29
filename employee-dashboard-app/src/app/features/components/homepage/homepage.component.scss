@@ -1,0 +1,52 @@
+@import "../../../../assets/styles/variables.scss";
+
+.homepage-wrapper {
+  height: 100%;
+  padding: 2rem;
+
+  h2 {
+    color: $main-letters-color;
+    text-decoration: underline;
+  }
+
+  .table-wrapper {
+    margin: 3rem 0;
+
+    table {
+      background-color: transparent;
+
+      th {
+        color: $main-letters-color;
+      }
+
+      td {
+        color: $main-letters-color;
+        padding: 0.5rem;
+        min-width: 7rem;
+
+        img {
+          height: 5rem;
+          width: 4rem;
+        }
+
+        a {
+          color: blue;
+          cursor: pointer;
+          text-decoration: underline;
+        }
+
+        P {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+        }
+      }
+    }
+
+    .table-paginator {
+      background-color: transparent;
+      color: $main-letters-color;
+    }
+  }
+}
