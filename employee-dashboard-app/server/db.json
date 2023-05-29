@@ -1,23 +1,5 @@
 {
-  "users": [
-    {
-      "firstName": "D",
-      "lastName": "DSD",
-      "email": "test@test.com",
-      "password": "1",
-      "createdAt": "2023-05-29T12:37:02.751Z",
-      "id": 1
-    },
-    {
-      "firstName": "Dusan testing",
-      "lastName": "S",
-      "email": "dsd@sds.com",
-      "password": "1",
-      "uploadedImg": "C:\\fakepath\\find-me.jpg",
-      "createdAt": "2023-05-29T14:34:13.622Z",
-      "id": 2
-    }
-  ],
+  "users": [],
   "employee": [
     {
       "image": "https://i.pinimg.com/originals/56/25/72/56257205381c43b879675aa59a95813e.jpg",
